@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css')}}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    
+    <title>Handwritten Digit Recognition</title>
+    <style>
+      .image {
+        background-image: url("{{ url_for('static', filename='images/loginimg2.jpg') }}");
+        background-color: #cccccc;
+        height: 753px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body class="bg-nav">
+    <div class="image">
+    <div id="content" >
+        <div class="container">
+          <br><br>
+          <h1 style="text-align:center;">Sign In</h1>
+          <div class="row">
+            <div class="col-md-6" style="margin-left: 300px;">
+                <div class="card">
+                  <div class="card-body" style="border:2px solid black">
+                    <form class="form" method="post" action="/login_validation">
+                      <label>Email</label><br>
+                      <input type = "email" class="form-control" name="email"><br>
+                      <label>Password</label><br>
+                      <input type="password" class="form-control" name="password"><br><br>
+                      {% if error %}  
+                      <p style="text-align: center;"><strong>Error</strong>: {{error}}</p>  
+                      {% endif %} 
+                      <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
+                    </form>
+                    <br>
+                      <p style="margin-top:10px;text-align:center;">Not a member? <a href="/register/">Create Account</a></p>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+  
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
