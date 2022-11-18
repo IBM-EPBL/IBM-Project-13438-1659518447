@@ -1,0 +1,9 @@
+.bg-nav
+{
+    background: #e704c9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E5E5BE, #db0ac2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E5E5BE, #f104b6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.row{
+    margin-top:80px;
+}

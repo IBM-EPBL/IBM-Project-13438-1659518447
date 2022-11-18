@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css')}}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Handwritten Digit Recognition</title>
+  </head>
+<body>
+
+<div class="bg-nav text-light d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark border-bottom shadow-sm" >
+  <h5 class="my-0 mr-md-auto" style="color: black;font-weight: bolder;">Handwritten Digit Recognisor</h5>
+  <a class="btn btn-outline-primary" href="/logout" style="color: whitesmoke;">Log Out</a>
+</div>
+
+
+<div style="margin-top: 30px;">
+
+</div>
+<main role="main">
+    <div style="text-align:center;margin-top: 1px;background-color:black;color:aliceblue;">
+        <h4 style="margin-top:50px;height: 40px;margin-top: 15px;"> Upload Image</h4>
+        <form action="/submit" id="upload-file" method="post" enctype="multipart/form-data">
+            <br>
+            <label for="imageUpload" class="upload-label" style="margin-left:140px;margin-bottom: 15px;">Choose</label>
+            <input type="file" name="image" id="imageUpload" accept=".png,.jpg,.jpeg">
+            <br>
+            <input style=" margin-bottom: 15px;" type="submit" value="Submit">
+            <br>
+        </form>
+    </div>
+</main>
+<div style="margin-top: 30px;">
+
+</div>
+<div class="bg-nav text-light  align-items-center p-3 px-md-8 mb-3 bg-dark border-bottom shadow-sm"  >
+    <h1 style="color: black;text-align:center;">Prediction</h1>
+    <div>
+        <form action="/prediction" id="predict-file" method="post" enctype="multipart/form-data">
+            <input style="margin-left: 700px;" type="submit" value="Show Output">
+            <br>
+        </form>
+    </div>
+    <div class="result-wrapper"style="color: black;text-align:center;" >
+        <div class="input-image-container">
+            <br>
+            <img src="{{url_for('static',filename='data/')}}{{img_name}}" />
+        </div>
+        <div class="result-container" style="margin-bottom: 242px;">
+            <h3>Predicted Output: </h3>
+            <div class="value" style="font-size:40px;font-weight: bold;">{{best}}</div>
+        </div>
+    </div>
+</div>
+
+
+
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
